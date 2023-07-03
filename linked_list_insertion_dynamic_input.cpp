@@ -37,7 +37,7 @@ void insertatend(Node* &tail, int item)
     tail = temp;
 }
 
-void insertAtpos(Node* &head,int pos,int item)
+void insertAtpos(Node* &head,Node* &tail,int pos,int item)
 {
     if(pos==1)
     {
@@ -52,6 +52,10 @@ void insertAtpos(Node* &head,int pos,int item)
         temp = temp->next;
         curr++;
     }
+    if(temp->next==NULL)
+    {
+      insertatend(tail,item);
+    } 
     Node* node2 = new Node(item);
     node2->next = temp->next;
     temp->next = node2;
