@@ -29,7 +29,7 @@ void insertatend(Node* &tail, int item)
     tail = temp;
 }
 
-void insertAtpos(Node* &head,int pos,int item)
+void insertAtpos(Node* &head,Node* &tail,int pos,int item)
 {
     if(pos==1)
     {
@@ -44,6 +44,12 @@ void insertAtpos(Node* &head,int pos,int item)
         temp = temp->next;
         curr++;
     }
+
+    if(temp->next==NULL)
+    {
+        insertatend(tail,item);
+        return;
+    }   
     Node* node2 = new Node(item);
     node2->next = temp->next;
     temp->next = node2;
@@ -76,7 +82,7 @@ int main()
     display(head);
     
     cout<<"\nAt a position insert:";
-    insertAtpos(head,3,20);
+    insertAtpos(head,tail,3,20);
     display(head);
     
     return 0;
