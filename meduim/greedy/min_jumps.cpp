@@ -45,3 +45,6 @@ class Solution {
 //          2         4         2 + 5 = 7     (4,7) = 7        4              N             -           -               F
 //          3         7         3 + 8 = 11    (11,7) = 11      4              N             -           -               F
 //          4         11        4 + 9 = 13    (13,11) = 13     4              Y             3           13              Y    --- break return jumps 
+
+// The check i < n - 1 ensures that we don't do any unnecessary work after we've already reached or passed the last index.
+//Once we've jumped to an index that is >= n - 1, we've technically “reached the end” or beyond. So no need to keep checking beyond that point.
