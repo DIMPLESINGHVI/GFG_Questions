@@ -27,3 +27,4 @@ class Solution {
          return "Yes";
     }
 };
+// TC O (sq log n)
